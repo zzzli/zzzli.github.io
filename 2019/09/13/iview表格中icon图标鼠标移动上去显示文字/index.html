@@ -4,15 +4,12 @@
 
 <head><meta name="generator" content="Hexo 3.9.0">
     <meta charset="utf-8">
-    <meta name="keywords" content="修改iview分页样式, 胡萝卜🥕的小站">
-    <meta name="description" content="前言
-大佬们就不用看啦~由于iview的分页样式跟项目有些许差别,修改后做一个记录~
-
-需求
-样式修改页面布局
-&amp;lt;div class=&#34;page&#34;&gt;
-  &amp;lt;span&gt;
-    当前第{{currentPage}}页/共{{pag">
+    <meta name="keywords" content="iview表格中icon图标鼠标移动上去显示文字, 胡萝卜🥕的小站">
+    <meta name="description" content="需求在table表格中,操作按钮一栏默认显示小眼睛图标.当鼠标移动上去的时候icon小眼睛隐藏,”查看详情文字”显示
+解决方案渲染表头时添加class名,通过css控制隐藏显示
+    {
+          title:&#39;操作&#39;,
+   ">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -20,7 +17,7 @@
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>修改iview分页样式 | 胡萝卜🥕的小站</title>
+    <title>iview表格中icon图标鼠标移动上去显示文字 | 胡萝卜🥕的小站</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/font-awesome.min.css">
@@ -211,7 +208,7 @@
             <div class="col s12 m12 l12">
                 <div class="brand">
                     <div class="description center-align post-title">
-                        修改iview分页样式
+                        iview表格中icon图标鼠标移动上去显示文字
                     </div>
                 </div>
             </div>
@@ -221,10 +218,99 @@
 
 
 
-<main class="container content">
+<main class="post-container content">
 
     
-    <!-- 文章内容详情 -->
+    <link rel="stylesheet" href="/libs/tocbot/tocbot.css">
+<style>
+    #articleContent h1::before,
+    #articleContent h2::before,
+    #articleContent h3::before,
+    #articleContent h4::before,
+    #articleContent h5::before,
+    #articleContent h6::before {
+        display: block;
+        content: " ";
+        height: 100px;
+        margin-top: -100px;
+        visibility: hidden;
+    }
+
+    #articleContent :focus {
+        outline: none;
+    }
+
+    .toc-fixed {
+        position: fixed;
+        top: 64px;
+    }
+
+    .toc-widget {
+        padding-left: 20px;
+    }
+
+    .toc-widget .toc-title {
+        margin: 35px 0 15px 0;
+        padding-left: 17px;
+        font-size: 1.5rem;
+        font-weight: bold;
+        line-height: 1.5rem;
+    }
+
+    .toc-widget ol {
+        padding: 0;
+        list-style: none;
+    }
+
+    #toc-content ol {
+        padding-left: 10px;
+    }
+
+    #toc-content ol li {
+        padding-left: 10px;
+    }
+
+    #toc-content .toc-link:hover {
+        color: #42b983;
+        font-weight: 700;
+        text-decoration: underline;
+    }
+
+    #toc-content .toc-link::before {
+        background-color: transparent;
+        max-height: 25px;
+    }
+
+    #toc-content .is-active-link {
+        color: #42b983;
+    }
+
+    #toc-content .is-active-link::before {
+        background-color: #42b983;
+    }
+
+    #floating-toc-btn {
+        position: fixed;
+        right: 20px;
+        bottom: 76px;
+        padding-top: 15px;
+        margin-bottom: 0;
+        z-index: 998;
+    }
+
+    #floating-toc-btn .btn-floating {
+        width: 48px;
+        height: 48px;
+    }
+
+    #floating-toc-btn .btn-floating i {
+        line-height: 48px;
+        font-size: 1.4rem;
+    }
+</style>
+<div class="row">
+    <div id="main-content" class="col s12 m12 l9">
+        <!-- 文章内容详情 -->
 <div id="artDetail">
     <div class="card">
         <div class="card-content article-info">
@@ -233,8 +319,12 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/分页/" target="_blank">
-                                <span class="chip bg-color">分页</span>
+                            <a href="/tags/css/" target="_blank">
+                                <span class="chip bg-color">css</span>
+                            </a>
+                        
+                            <a href="/tags/iview/" target="_blank">
+                                <span class="chip bg-color">iview</span>
                             </a>
                         
                     </div>
@@ -264,7 +354,7 @@
                     
                     <div class="info-break-policy">
                         <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                        222
+                        176
                     </div>
                     
 
@@ -287,50 +377,46 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h4 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h4><blockquote>
-<p>大佬们就不用看啦~<br>由于iview的分页样式跟项目有些许差别,修改后做一个记录~</p>
-</blockquote>
-<h4 id="需求"><a href="#需求" class="headerlink" title="需求"></a>需求</h4><p><img src="/img/page.png" alt="分页样式"></p>
-<h4 id="样式修改"><a href="#样式修改" class="headerlink" title="样式修改"></a>样式修改</h4><p>页面布局</p>
-<pre class=" language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>page<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
-  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>span</span><span class="token punctuation">></span></span>
-    当前第{{currentPage}}页/共{{pageCount}}页/共{{allRecordCount}}条信息
-  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>span</span><span class="token punctuation">></span></span>
-  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>Page</span> <span class="token attr-name">:total</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>allRecordCount<span class="token punctuation">"</span></span> <span class="token attr-name">show-elevator</span> <span class="token attr-name">prev-text</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>上一页<span class="token punctuation">"</span></span> 
-        <span class="token attr-name">next-text</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>下一页<span class="token punctuation">"</span></span> <span class="token attr-name">class-name</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>bazl_page<span class="token punctuation">"</span></span> <span class="token attr-name">:current</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>currentPage<span class="token punctuation">"</span></span>  <span class="token attr-name">:page-size</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>15<span class="token punctuation">"</span></span> <span class="token attr-name">@on-change</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>changePage<span class="token punctuation">"</span></span><span class="token punctuation">/></span></span>
-<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span></code></pre>
-<p>CSS处理</p>
-<pre class=" language-css"><code class="language-css"><span class="token selector"><span class="token class">.page</span></span><span class="token punctuation">{</span>
-  <span class="token property">margin-top</span><span class="token punctuation">:</span> <span class="token number">10</span>px<span class="token punctuation">;</span>
-  <span class="token property">overflow</span><span class="token punctuation">:</span> hidden<span class="token punctuation">;</span>
+                <h4 id="需求"><a href="#需求" class="headerlink" title="需求"></a>需求</h4><p>在table表格中,操作按钮一栏默认显示小眼睛图标.当鼠标移动上去的时候icon小眼睛隐藏,”查看详情文字”显示</p>
+<h4 id="解决方案"><a href="#解决方案" class="headerlink" title="解决方案"></a>解决方案</h4><p>渲染表头时添加class名,通过css控制隐藏显示</p>
+<pre class=" language-javascript"><code class="language-javascript">    <span class="token punctuation">{</span>
+          title<span class="token punctuation">:</span><span class="token string">'操作'</span><span class="token punctuation">,</span>
+          key<span class="token punctuation">:</span><span class="token string">'action'</span><span class="token punctuation">,</span>
+          className<span class="token punctuation">:</span><span class="token string">'hover_text'</span><span class="token punctuation">,</span>
+          render<span class="token punctuation">:</span><span class="token punctuation">(</span>h<span class="token punctuation">,</span>params<span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">></span> <span class="token punctuation">{</span>
+            <span class="token keyword">return</span> <span class="token function">h</span><span class="token punctuation">(</span><span class="token string">'div'</span><span class="token punctuation">,</span><span class="token punctuation">[</span>
+              <span class="token function">h</span><span class="token punctuation">(</span><span class="token string">'Icon'</span><span class="token punctuation">,</span><span class="token punctuation">{</span>
+                <span class="token keyword">class</span><span class="token punctuation">:</span><span class="token string">'look_eye'</span><span class="token punctuation">,</span>
+                props<span class="token punctuation">:</span><span class="token punctuation">{</span>
+                  type<span class="token punctuation">:</span><span class="token string">'md-eye'</span><span class="token punctuation">,</span>
+                  size<span class="token punctuation">:</span><span class="token string">'20'</span><span class="token punctuation">,</span>
+                  color<span class="token punctuation">:</span><span class="token string">'#FFAA06'</span>
+                <span class="token punctuation">}</span>
+              <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+              <span class="token function">h</span><span class="token punctuation">(</span><span class="token string">'strong'</span><span class="token punctuation">,</span><span class="token punctuation">{</span>
+                <span class="token keyword">class</span><span class="token punctuation">:</span><span class="token string">'look_text'</span><span class="token punctuation">,</span>
+                style<span class="token punctuation">:</span><span class="token punctuation">{</span>
+                  color<span class="token punctuation">:</span><span class="token string">'#FFB72C'</span><span class="token punctuation">,</span>
+                  display<span class="token punctuation">:</span><span class="token string">'none'</span>
+                <span class="token punctuation">}</span><span class="token punctuation">,</span>
+                on<span class="token punctuation">:</span><span class="token punctuation">{</span>
+                  click<span class="token punctuation">:</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">=</span><span class="token operator">></span><span class="token punctuation">{</span>
+
+                  <span class="token punctuation">}</span>
+                <span class="token punctuation">}</span>
+              <span class="token punctuation">}</span><span class="token punctuation">,</span><span class="token string">'查看详情'</span><span class="token punctuation">)</span>
+            <span class="token punctuation">]</span><span class="token punctuation">)</span>
+          <span class="token punctuation">}</span>
+        <span class="token punctuation">}</span></code></pre>
+<p>css</p>
+<pre class=" language-css"><code class="language-css"><span class="token selector"><span class="token class">.hover_text</span></span><span class="token punctuation">{</span>
+  <span class="token property">cursor</span><span class="token punctuation">:</span> pointer<span class="token punctuation">;</span>
 <span class="token punctuation">}</span>
-<span class="token selector"><span class="token class">.page</span>>span</span><span class="token punctuation">{</span>
-  <span class="token property">float</span><span class="token punctuation">:</span> left<span class="token punctuation">;</span>
-  <span class="token property">font-size</span><span class="token punctuation">:</span> <span class="token number">12</span>px<span class="token punctuation">;</span>
-  <span class="token property">color</span><span class="token punctuation">:</span> <span class="token hexcode">#9A9A9A</span><span class="token punctuation">;</span>
-  <span class="token property">padding-left</span><span class="token punctuation">:</span> <span class="token number">10</span>px<span class="token punctuation">;</span>
-  <span class="token property">height</span><span class="token punctuation">:</span> <span class="token number">32</span>px<span class="token punctuation">;</span>
-  <span class="token property">line-height</span><span class="token punctuation">:</span> <span class="token number">32</span>px<span class="token punctuation">;</span>
+<span class="token selector"><span class="token class">.hover_text</span><span class="token pseudo-class">:hover</span> <span class="token class">.ivu-icon</span></span><span class="token punctuation">{</span>
+  <span class="token property">display</span><span class="token punctuation">:</span> none<span class="token punctuation">;</span>
 <span class="token punctuation">}</span>
-<span class="token selector"><span class="token class">.page</span> <span class="token class">.bazl_page</span></span><span class="token punctuation">{</span>
-  <span class="token property">float</span><span class="token punctuation">:</span> right<span class="token punctuation">;</span>
-  <span class="token property">padding-right</span><span class="token punctuation">:</span> <span class="token number">15</span>px<span class="token punctuation">;</span>
-<span class="token punctuation">}</span>
-<span class="token selector"><span class="token class">.bazl_page</span> <span class="token class">.ivu-page-custom-text</span></span><span class="token punctuation">{</span>
-  <span class="token property">border</span><span class="token punctuation">:</span> <span class="token number">1</span>px solid <span class="token hexcode">#dcdee2</span><span class="token punctuation">;</span>
-  <span class="token property">padding</span><span class="token punctuation">:</span> <span class="token number">0</span> <span class="token number">2</span>px<span class="token punctuation">;</span>
-  <span class="token comment" spellcheck="true">/* color: #2d8cf0; */</span>
-<span class="token punctuation">}</span>
-<span class="token selector"><span class="token class">.bazl_page</span> <span class="token class">.ivu-page-custom-text</span><span class="token pseudo-class">:hover</span></span><span class="token punctuation">{</span>
-  <span class="token property">border</span><span class="token punctuation">:</span> <span class="token number">1</span>px solid <span class="token hexcode">#2d8cf0</span> <span class="token important">!important</span><span class="token punctuation">;</span>
-  <span class="token property">color</span><span class="token punctuation">:</span> <span class="token hexcode">#2d8cf0</span><span class="token punctuation">;</span>
-<span class="token punctuation">}</span></code></pre>
-<p>js处理</p>
-<pre class=" language-javascript"><code class="language-javascript">currentPage<span class="token punctuation">:</span><span class="token number">1</span><span class="token punctuation">,</span>
-pageCount<span class="token punctuation">:</span><span class="token number">1</span><span class="token punctuation">,</span>
-allRecordCount<span class="token punctuation">:</span><span class="token number">0</span><span class="token punctuation">,</span>
-<span class="token function">changePage</span><span class="token punctuation">(</span>page<span class="token punctuation">)</span><span class="token punctuation">{</span>
-  <span class="token comment" spellcheck="true">//返回当前页</span>
+<span class="token selector"><span class="token class">.hover_text</span><span class="token pseudo-class">:hover</span> <span class="token class">.look_text</span></span><span class="token punctuation">{</span>
+  <span class="token property">display</span><span class="token punctuation">:</span> block <span class="token important">!important</span><span class="token punctuation">;</span>
 <span class="token punctuation">}</span></code></pre>
 <script>
         document.querySelectorAll('.github-emoji')
@@ -508,9 +594,9 @@ allRecordCount<span class="token punctuation">:</span><span class="token number"
             <br/>
             <span xmlns:dct="http://purl.org/dc/terms/" href="http://purl.org/dc/dcmitype/Text"
                   property="dct:title" rel="dct:type">
-                    《修改iview分页样式》
+                    《iview表格中icon图标鼠标移动上去显示文字》
                 </span> 由
-            <a xmlns:cc="http://creativecommons.org/ns#" href="/2019/09/13/修改iview分页样式/" property="cc:attributionName"
+            <a xmlns:cc="http://creativecommons.org/ns#" href="/2019/09/13/iview表格中icon图标鼠标移动上去显示文字/" property="cc:attributionName"
                rel="cc:attributionURL">
                 胡萝卜🥕
             </a> 采用
@@ -554,19 +640,19 @@ allRecordCount<span class="token punctuation">:</span><span class="token number"
             <div class="article-badge left-badge text-color">
                 <i class="fa fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2019/09/13/iview表格中icon图标鼠标移动上去显示文字/">
+                <a href="/2019/09/13/Vue插值表达式/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/14.jpg" class="responsive-img" alt="iview表格中icon图标鼠标移动上去显示文字">
+                        <img src="/medias/featureimages/9.jpg" class="responsive-img" alt="Vue插值表达式">
                         
-                        <span class="card-title">iview表格中icon图标鼠标移动上去显示文字</span>
+                        <span class="card-title">Vue插值表达式</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            iview表格中操作列,默认显示icon.鼠标移动上去显示文字
+                            Vue插值表达式中可以写什么?
                         
                     </div>
                     <div class="publish-info">
@@ -588,12 +674,8 @@ allRecordCount<span class="token punctuation">:</span><span class="token number"
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/css/" target="_blank">
-                        <span class="chip bg-color">css</span>
-                    </a>
-                    
-                    <a href="/tags/iview/" target="_blank">
-                        <span class="chip bg-color">iview</span>
+                    <a href="/tags/插值表达式/" target="_blank">
+                        <span class="chip bg-color">插值表达式</span>
                     </a>
                     
                 </div>
@@ -607,19 +689,19 @@ allRecordCount<span class="token punctuation">:</span><span class="token number"
                 下一篇&nbsp;<i class="fa fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2019/09/13/Vue项目中实现Tab切换页/">
+                <a href="/2019/09/13/修改iview分页样式/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/1.jpg" class="responsive-img" alt="Vue项目中实现Tab切换页">
+                        <img src="/medias/featureimages/14.jpg" class="responsive-img" alt="修改iview分页样式">
                         
-                        <span class="card-title">Vue项目中实现Tab切换页</span>
+                        <span class="card-title">修改iview分页样式</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            在Vue项目中实现Tab切换,标题颜色/icon改变
+                            由于iview中的分页与需求样式有差别,修改一下
                         
                     </div>
                     <div class="publish-info">
@@ -641,8 +723,8 @@ allRecordCount<span class="token punctuation">:</span><span class="token number"
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/tab切换/" target="_blank">
-                        <span class="chip bg-color">tab切换</span>
+                    <a href="/tags/分页/" target="_blank">
+                        <span class="chip bg-color">分页</span>
                     </a>
                     
                 </div>
@@ -656,6 +738,99 @@ allRecordCount<span class="token punctuation">:</span><span class="token number"
 
 
 
+    </div>
+    <div id="toc-aside" class="expanded col l3 hide-on-med-and-down">
+        <div class="toc-widget">
+            <div class="toc-title"><i class="fa fa-list-alt"></i>&nbsp;&nbsp;目录</div>
+            <div id="toc-content"></div>
+        </div>
+    </div>
+</div>
+
+<!-- TOC 悬浮按钮. -->
+
+<div id="floating-toc-btn" class="hide-on-med-and-down">
+    <a class="btn-floating btn-large bg-color">
+        <i class="fa fa-list"></i>
+    </a>
+</div>
+
+
+<script src="/libs/tocbot/tocbot.min.js"></script>
+<script>
+    $(function () {
+        tocbot.init({
+            tocSelector: '#toc-content',
+            contentSelector: '#articleContent',
+            headingsOffset: -($(window).height() * 0.4 - 45),
+            // headingsOffset: -205,
+            headingSelector: 'h2, h3, h4'
+        });
+
+        // modify the toc link href to support Chinese.
+        let i = 0;
+        let tocHeading = 'toc-heading-';
+        $('#toc-content a').each(function () {
+            $(this).attr('href', '#' + tocHeading + (++i));
+        });
+
+        // modify the heading title id to support Chinese.
+        i = 0;
+        $('#articleContent').children('h2, h3, h4').each(function () {
+            $(this).attr('id', tocHeading + (++i));
+        });
+
+        // Set scroll toc fixed.
+        let tocHeight = parseInt($(window).height() * 0.4 - 64);
+        let $tocWidget = $('.toc-widget');
+        $(window).scroll(function () {
+            let scroll = $(window).scrollTop();
+            /* add post toc fixed. */
+            if (scroll > tocHeight) {
+                $tocWidget.addClass('toc-fixed');
+            } else {
+                $tocWidget.removeClass('toc-fixed');
+            }
+        });
+
+        
+        /* 修复文章卡片 div 的宽度. */
+        let fixPostCardWidth = function (srcId, targetId) {
+            let srcDiv = $('#' + srcId);
+            if (srcDiv.length === 0) {
+                return;
+            }
+
+            let w = srcDiv.width();
+            if (w >= 450) {
+                w = w + 21;
+            } else if (w >= 350 && w < 450) {
+                w = w + 18;
+            } else if (w >= 300 && w < 350) {
+                w = w + 16;
+            } else {
+                w = w + 14;
+            }
+            $('#' + targetId).width(w);
+        };
+
+        // 切换TOC目录展开收缩的相关操作.
+        const expandedClass = 'expanded';
+        let $tocAside = $('#toc-aside');
+        let $mainContent = $('#main-content');
+        $('#floating-toc-btn .btn-floating').click(function () {
+            if ($tocAside.hasClass(expandedClass)) {
+                $tocAside.removeClass(expandedClass).slideUp(500);
+                $mainContent.removeClass('l9');
+            } else {
+                $tocAside.addClass(expandedClass).slideDown(500);
+                $mainContent.addClass('l9');
+            }
+            fixPostCardWidth('artDetail', 'prenext-posts');
+        });
+        
+    });
+</script>
     
 
 </main>

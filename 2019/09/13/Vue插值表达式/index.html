@@ -4,15 +4,13 @@
 
 <head><meta name="generator" content="Hexo 3.9.0">
     <meta charset="utf-8">
-    <meta name="keywords" content="修改iview分页样式, 胡萝卜🥕的小站">
-    <meta name="description" content="前言
-大佬们就不用看啦~由于iview的分页样式跟项目有些许差别,修改后做一个记录~
+    <meta name="keywords" content="Vue插值表达式, 胡萝卜🥕的小站">
+    <meta name="description" content="{{hello + &#39; World !&#39;}}
+{{hello == &#39;Hello&#39; ? &#39;yes&#39; : &#39;no&#39;}}
+{{ hello.split(&#39;ll&#39;).reverse().join(&#39;aa&#39;) }}
+{{ judge() }}
 
-需求
-样式修改页面布局
-&amp;lt;div class=&#34;page&#34;&gt;
-  &amp;lt;span&gt;
-    当前第{{currentPage}}页/共{{pag">
+h">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -20,7 +18,7 @@
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>修改iview分页样式 | 胡萝卜🥕的小站</title>
+    <title>Vue插值表达式 | 胡萝卜🥕的小站</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/font-awesome.min.css">
@@ -205,13 +203,13 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/14.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/9.jpg')">
     <div class="container">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
                     <div class="description center-align post-title">
-                        修改iview分页样式
+                        Vue插值表达式
                     </div>
                 </div>
             </div>
@@ -233,8 +231,8 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/分页/" target="_blank">
-                                <span class="chip bg-color">分页</span>
+                            <a href="/tags/插值表达式/" target="_blank">
+                                <span class="chip bg-color">插值表达式</span>
                             </a>
                         
                     </div>
@@ -264,7 +262,7 @@
                     
                     <div class="info-break-policy">
                         <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                        222
+                        263
                     </div>
                     
 
@@ -287,51 +285,23 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h4 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h4><blockquote>
-<p>大佬们就不用看啦~<br>由于iview的分页样式跟项目有些许差别,修改后做一个记录~</p>
-</blockquote>
-<h4 id="需求"><a href="#需求" class="headerlink" title="需求"></a>需求</h4><p><img src="/img/page.png" alt="分页样式"></p>
-<h4 id="样式修改"><a href="#样式修改" class="headerlink" title="样式修改"></a>样式修改</h4><p>页面布局</p>
-<pre class=" language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>page<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
-  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>span</span><span class="token punctuation">></span></span>
-    当前第{{currentPage}}页/共{{pageCount}}页/共{{allRecordCount}}条信息
-  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>span</span><span class="token punctuation">></span></span>
-  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>Page</span> <span class="token attr-name">:total</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>allRecordCount<span class="token punctuation">"</span></span> <span class="token attr-name">show-elevator</span> <span class="token attr-name">prev-text</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>上一页<span class="token punctuation">"</span></span> 
-        <span class="token attr-name">next-text</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>下一页<span class="token punctuation">"</span></span> <span class="token attr-name">class-name</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>bazl_page<span class="token punctuation">"</span></span> <span class="token attr-name">:current</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>currentPage<span class="token punctuation">"</span></span>  <span class="token attr-name">:page-size</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>15<span class="token punctuation">"</span></span> <span class="token attr-name">@on-change</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>changePage<span class="token punctuation">"</span></span><span class="token punctuation">/></span></span>
-<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span></code></pre>
-<p>CSS处理</p>
-<pre class=" language-css"><code class="language-css"><span class="token selector"><span class="token class">.page</span></span><span class="token punctuation">{</span>
-  <span class="token property">margin-top</span><span class="token punctuation">:</span> <span class="token number">10</span>px<span class="token punctuation">;</span>
-  <span class="token property">overflow</span><span class="token punctuation">:</span> hidden<span class="token punctuation">;</span>
-<span class="token punctuation">}</span>
-<span class="token selector"><span class="token class">.page</span>>span</span><span class="token punctuation">{</span>
-  <span class="token property">float</span><span class="token punctuation">:</span> left<span class="token punctuation">;</span>
-  <span class="token property">font-size</span><span class="token punctuation">:</span> <span class="token number">12</span>px<span class="token punctuation">;</span>
-  <span class="token property">color</span><span class="token punctuation">:</span> <span class="token hexcode">#9A9A9A</span><span class="token punctuation">;</span>
-  <span class="token property">padding-left</span><span class="token punctuation">:</span> <span class="token number">10</span>px<span class="token punctuation">;</span>
-  <span class="token property">height</span><span class="token punctuation">:</span> <span class="token number">32</span>px<span class="token punctuation">;</span>
-  <span class="token property">line-height</span><span class="token punctuation">:</span> <span class="token number">32</span>px<span class="token punctuation">;</span>
-<span class="token punctuation">}</span>
-<span class="token selector"><span class="token class">.page</span> <span class="token class">.bazl_page</span></span><span class="token punctuation">{</span>
-  <span class="token property">float</span><span class="token punctuation">:</span> right<span class="token punctuation">;</span>
-  <span class="token property">padding-right</span><span class="token punctuation">:</span> <span class="token number">15</span>px<span class="token punctuation">;</span>
-<span class="token punctuation">}</span>
-<span class="token selector"><span class="token class">.bazl_page</span> <span class="token class">.ivu-page-custom-text</span></span><span class="token punctuation">{</span>
-  <span class="token property">border</span><span class="token punctuation">:</span> <span class="token number">1</span>px solid <span class="token hexcode">#dcdee2</span><span class="token punctuation">;</span>
-  <span class="token property">padding</span><span class="token punctuation">:</span> <span class="token number">0</span> <span class="token number">2</span>px<span class="token punctuation">;</span>
-  <span class="token comment" spellcheck="true">/* color: #2d8cf0; */</span>
-<span class="token punctuation">}</span>
-<span class="token selector"><span class="token class">.bazl_page</span> <span class="token class">.ivu-page-custom-text</span><span class="token pseudo-class">:hover</span></span><span class="token punctuation">{</span>
-  <span class="token property">border</span><span class="token punctuation">:</span> <span class="token number">1</span>px solid <span class="token hexcode">#2d8cf0</span> <span class="token important">!important</span><span class="token punctuation">;</span>
-  <span class="token property">color</span><span class="token punctuation">:</span> <span class="token hexcode">#2d8cf0</span><span class="token punctuation">;</span>
-<span class="token punctuation">}</span></code></pre>
-<p>js处理</p>
-<pre class=" language-javascript"><code class="language-javascript">currentPage<span class="token punctuation">:</span><span class="token number">1</span><span class="token punctuation">,</span>
-pageCount<span class="token punctuation">:</span><span class="token number">1</span><span class="token punctuation">,</span>
-allRecordCount<span class="token punctuation">:</span><span class="token number">0</span><span class="token punctuation">,</span>
-<span class="token function">changePage</span><span class="token punctuation">(</span>page<span class="token punctuation">)</span><span class="token punctuation">{</span>
-  <span class="token comment" spellcheck="true">//返回当前页</span>
-<span class="token punctuation">}</span></code></pre>
+                <pre class=" language-javascript"><code class="language-javascript"><span class="token punctuation">{</span><span class="token punctuation">{</span>hello <span class="token operator">+</span> <span class="token string">' World !'</span><span class="token punctuation">}</span><span class="token punctuation">}</span>
+<span class="token punctuation">{</span><span class="token punctuation">{</span>hello <span class="token operator">==</span> <span class="token string">'Hello'</span> <span class="token operator">?</span> <span class="token string">'yes'</span> <span class="token punctuation">:</span> <span class="token string">'no'</span><span class="token punctuation">}</span><span class="token punctuation">}</span>
+<span class="token punctuation">{</span><span class="token punctuation">{</span> hello<span class="token punctuation">.</span><span class="token function">split</span><span class="token punctuation">(</span><span class="token string">'ll'</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">reverse</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">join</span><span class="token punctuation">(</span><span class="token string">'aa'</span><span class="token punctuation">)</span> <span class="token punctuation">}</span><span class="token punctuation">}</span>
+<span class="token punctuation">{</span><span class="token punctuation">{</span> <span class="token function">judge</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">}</span><span class="token punctuation">}</span>
+
+hello<span class="token punctuation">:</span> <span class="token string">'Hello'</span></code></pre>
+<ol>
+<li><p>字符串拼接，由于hello 参数的值是Hello，故拼接的结果是Hello World !</p>
+</li>
+<li><p>是判断，hello 的值为Hello，则返回yes，否则返回no。由于hello 的值确实为Hello，故返回的值为yes。</p>
+</li>
+<li><p>是先执行split()方法，将Hello以字符串ll来进行分割，分割成he和o两个字符串，然后再执行reverse()完成串数组的颠倒操作，变成o和he，最后执行join()来插入aa字符串，故最终的结果为：oaaHe。</p>
+</li>
+<li><p>其实是调用了vm中的methods方法域中的judge()函数，通过传入hello参数，该参数的值为Hello，然后再将其与World字符串相比较，如果相同，则返回true，否则则返回false。由于Hello与World并不相同，故返回的值为false。</p>
+</li>
+</ol>
+<p> </p>
 <script>
         document.querySelectorAll('.github-emoji')
           .forEach(el => {
@@ -508,9 +478,9 @@ allRecordCount<span class="token punctuation">:</span><span class="token number"
             <br/>
             <span xmlns:dct="http://purl.org/dc/terms/" href="http://purl.org/dc/dcmitype/Text"
                   property="dct:title" rel="dct:type">
-                    《修改iview分页样式》
+                    《Vue插值表达式》
                 </span> 由
-            <a xmlns:cc="http://creativecommons.org/ns#" href="/2019/09/13/修改iview分页样式/" property="cc:attributionName"
+            <a xmlns:cc="http://creativecommons.org/ns#" href="/2019/09/13/Vue插值表达式/" property="cc:attributionName"
                rel="cc:attributionURL">
                 胡萝卜🥕
             </a> 采用
@@ -550,9 +520,60 @@ allRecordCount<span class="token punctuation">:</span><span class="token number"
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fa fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="fa fa-dot-circle-o"></i>&nbsp;本篇
+            </div>
+            <div class="card">
+                <a href="/2019/09/13/Vue插值表达式/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/9.jpg" class="responsive-img" alt="Vue插值表达式">
+                        
+                        <span class="card-title">Vue插值表达式</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            Vue插值表达式中可以写什么?
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2019-09-13
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fa fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/Vue/" class="post-category" target="_blank">
+                                    Vue
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/插值表达式/" target="_blank">
+                        <span class="chip bg-color">插值表达式</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fa fa-chevron-right"></i>
+            </div>
             <div class="card">
                 <a href="/2019/09/13/iview表格中icon图标鼠标移动上去显示文字/">
                     <div class="card-image">
@@ -567,59 +588,6 @@ allRecordCount<span class="token punctuation">:</span><span class="token number"
                     <div class="summary block-with-text">
                         
                             iview表格中操作列,默认显示icon.鼠标移动上去显示文字
-                        
-                    </div>
-                    <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="fa fa-clock-o fa-fw icon-date"></i>2019-09-13
-                        </span>
-                        <span class="publish-author">
-                            
-                            <i class="fa fa-bookmark fa-fw icon-category"></i>
-                            
-                            <a href="/categories/Vue/" class="post-category" target="_blank">
-                                    Vue
-                                </a>
-                            
-                            
-                        </span>
-                    </div>
-                </div>
-                
-                <div class="card-action article-tags">
-                    
-                    <a href="/tags/css/" target="_blank">
-                        <span class="chip bg-color">css</span>
-                    </a>
-                    
-                    <a href="/tags/iview/" target="_blank">
-                        <span class="chip bg-color">iview</span>
-                    </a>
-                    
-                </div>
-                
-            </div>
-        </div>
-        
-        
-        <div class="article col s12 m6" data-aos="fade-up">
-            <div class="article-badge right-badge text-color">
-                下一篇&nbsp;<i class="fa fa-chevron-right"></i>
-            </div>
-            <div class="card">
-                <a href="/2019/09/13/Vue项目中实现Tab切换页/">
-                    <div class="card-image">
-                        
-                        
-                        <img src="/medias/featureimages/1.jpg" class="responsive-img" alt="Vue项目中实现Tab切换页">
-                        
-                        <span class="card-title">Vue项目中实现Tab切换页</span>
-                    </div>
-                </a>
-                <div class="card-content article-content">
-                    <div class="summary block-with-text">
-                        
-                            在Vue项目中实现Tab切换,标题颜色/icon改变
                         
                     </div>
                     <div class="publish-info">
@@ -641,8 +609,12 @@ allRecordCount<span class="token punctuation">:</span><span class="token number"
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/tab切换/" target="_blank">
-                        <span class="chip bg-color">tab切换</span>
+                    <a href="/tags/css/" target="_blank">
+                        <span class="chip bg-color">css</span>
+                    </a>
+                    
+                    <a href="/tags/iview/" target="_blank">
+                        <span class="chip bg-color">iview</span>
                     </a>
                     
                 </div>
