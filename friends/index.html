@@ -252,7 +252,7 @@ $('.bg-cover').css('background-image', 'url(/medias/banner/' + new Date().getDay
     }
 
     .frind-ship .title h1 {
-        line-height: 0.8rem;
+        line-height: auto;
         padding-bottom: 16px;
         border-bottom: 2px solid #fff;
     }
@@ -397,18 +397,73 @@ $('.bg-cover').css('background-image', 'url(/medias/banner/' + new Date().getDay
 
 <main class="content">
     <div class="container friends-container">
+        <div class="card">
+            <div class="card-content">
+                <div class="card-content article-card-content">
+                    <div id="articleContent" data-aos="fade-up">
+                        <p><em><em> 很早就想搞一个博客了.但是由于懒和技术差的原因一直没有成功.直到看到大佬@<a href="https://godweiyang.com" target="_blank" rel="noopener">韦阳</a>的教程,终于成功了,感谢大佬<del>~</del> </em></em></p>
+<p><em><em> 同样要搭建博客的小伙伴儿可以参考大佬的文章,遇到问题也可以私聊我哈~ </em></em></p>
+<script>
+        document.querySelectorAll('.github-emoji')
+          .forEach(el => {
+            if (!el.dataset.src) { return; }
+            const img = document.createElement('img');
+            img.style = 'display:none !important;';
+            img.src = el.dataset.src;
+            img.addEventListener('error', () => {
+              img.remove();
+              el.style.color = 'inherit';
+              el.style.backgroundImage = 'none';
+              el.style.background = 'none';
+            });
+            img.addEventListener('load', () => {
+              img.remove();
+            });
+            document.body.appendChild(img);
+          });
+      </script>
+                    </div>
+                </div>
+            </div>
+        </div>
         <article id="friends-link">
+            
+            
+            <div class="row tags-posts friend-all">
+                
+                
+                <div class="col s12 m6 l4 friend-div" data-aos="zoom-in-up">
+                    <div class="card frind-card1">
+                        <div class="frind-ship">
+                            <div class="title">
+                                <img src="https://godweiyang.com/medias/avatars/avatar.jpg" alt="img">
+                                <div>
+                                    <h1 class="friend-name">godweiyang</h1>
+                                    <p>ECNU NLPer</p>
+                                </div>
+                            </div>
+                            <div class="friend-button">
+                                <a href="https://godweiyang.com" target="_blank"
+                                    class="button button-glow button-rounded button-caution">
+                                    访问主页
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
             
         </article>
     </div>
 </main>
 
 <script>
-$(function () {
-    $('#friends-link').masonry({
-        itemSelector: '.friend-div'
+    $(function () {
+        $('#friends-link').masonry({
+            itemSelector: '.friend-div'
+        });
     });
-});
 </script>
 <footer class="page-footer bg-color">
         <div class="container row center-align">
